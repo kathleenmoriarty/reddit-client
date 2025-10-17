@@ -1,0 +1,59 @@
+.story {
+    display: flex;
+    flex-direction: column; 
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px 25px 5px 25px;
+}
+
+.profile-info div {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info img {
+    width: 3vw;
+    margin-right: 10px;
+}
+
+.content {
+    margin: 0 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content h3 {
+    padding: 8px 0;
+}
+
+.content img {
+    align-self: center;
+}
+
+.likes-comments {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 25px;
+}
+
+.likes-comments div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.likes-comments div, .comment, .share {
+    background-color: rgb(236, 230, 230);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.likes-comments button:hover {
+    background-color: rgb(85, 85, 236);
+    color: white;
+}

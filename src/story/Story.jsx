@@ -8,8 +8,11 @@ const Story = ({mockData}) => {
     <div className="story">
 
       <div className="profile-info">
-        <img src={mockData.image} alt="profile-pic" />
-        <h4>{mockData.author}</h4>
+        <div>
+            <img src={mockData.image} alt="profile-pic" />
+            <h4>{mockData.author}</h4>
+        </div>
+        
         <p>{mockData.time}</p>
       </div>
 
@@ -24,11 +27,11 @@ const Story = ({mockData}) => {
             <p>{mockData.likes}</p>
             <button><FontAwesomeIcon icon={faThumbsDown} /></button>
         </div>
-        <button>
+        <button className="comment">
             <FontAwesomeIcon icon={faComment} />
             {mockData.comments}
         </button>
-        <button>
+        <button className="share">
             <FontAwesomeIcon icon={faShare} />
             Share
         </button>
