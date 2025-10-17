@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
+
 const SearchBar = ({ search, setSearch }) => {
   return (
-    <div>
+    <div className="search">
       <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
       <input
         id="search"
