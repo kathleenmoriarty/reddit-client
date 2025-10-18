@@ -18,6 +18,9 @@ console.log("Auth URL: ", authUrl);
 function App() {
 
   const [search, setSearch] = useState("");
+  const [subreddits, setSubreddits] = useState([]);
+  const [selectedSubreddit, setSelectedSubreddit] = useState("popular");
+
   const dispatch = useDispatch();
 
   const token = useSelector(state => state.auth.token);
@@ -25,6 +28,38 @@ function App() {
 
   const loginWithReddit = () => {
     window.location.href = authUrl;
+  };
+
+  const handleSearch = () => {
+    const trimmed = search.trim();
+    if (trimmed) {
+      setSelectedSubreddit(trimmed); // update display
+    }
+  };
+  
+
+  const handleSubredditClick = (subreddit) => {
+    setSelectedSubreddit(subreddit);
+    dispatch(fetchPosts({ token, subreddit }));
+  };
+
+  const fetchPopularSubreddits = async (token) => {
+    try {
+      const response = await fetch('https://oauth.reddit.com/subreddits/popular', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'User-Agent': 'diet-reddit-app/0.1 by YourUsername'
+        }
+      });
+      const data = await response.json();
+      if (data && data.data && data.data.children) {
+        // Extract subreddit names
+        const subs = data.data.children.map(child => child.data.display_name);
+        setSubreddits(subs);
+      }
+    } catch (error) {
+      console.error("Failed to fetch popular subreddits:", error);
+    }
   };
 
   useEffect(() => {
@@ -39,11 +74,20 @@ function App() {
 
     if (accessToken) {
       dispatch(setToken(accessToken)); // save token in Redux
-      dispatch(fetchPosts({ token: accessToken, subreddit: 'javascript' })); // fetch posts
-      window.history.replaceState(null, '', '/'); // clean URL
+      setSelectedSubreddit("popular"); // set this
+      dispatch(fetchPosts({ token: accessToken, subreddit: selectedSubreddit })); // fetch posts
+      fetchPopularSubreddits(accessToken);
+      window.history.replaceState(null, '', '/');
     }
   }, [dispatch]);
-  
+
+  useEffect(() => {
+    if (token) {
+      dispatch(fetchPosts({ token, subreddit: selectedSubreddit }));
+      fetchPopularSubreddits(token);  // Also keep popular subreddits updated after login
+    }
+  }, [dispatch, token, selectedSubreddit]);
+
 
   return (
     <main>
@@ -56,7 +100,7 @@ function App() {
               <img src={redditLogo} alt="logo"/>
               <h1>diet reddit</h1>
             </div>
-            <SearchBar search={search} setSearch={setSearch}/>
+            <SearchBar search={search} setSearch={setSearch} handleSearch={handleSearch}/>
             <a href="http://www.reddit.com" target="_blank" rel="noopener noreferrer">
               <button className="to-reddit">Go to reddit</button>
             </a>
@@ -68,6 +112,22 @@ function App() {
             
             <div className="subreddits">
               <h3>Subreddits</h3>
+              <ul>
+                {subreddits.length > 0 ? subreddits.map((sub) => (
+                  <li 
+                    key={sub} 
+                    onClick={() => handleSubredditClick(sub)}
+                    style={{ 
+                      cursor: 'pointer', 
+                      fontWeight: sub === selectedSubreddit ? 'bold' : 'normal' 
+                    }}
+                  >
+                    r/{sub}
+                  </li>
+                )) : (
+                  <li>Loading popular subreddits...</li>
+                )}
+              </ul>
             </div>
           </div>
           
