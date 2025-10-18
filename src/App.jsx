@@ -5,11 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setToken } from './features/auth/authSlice';
 import {fetchPosts} from './features/posts/postsSlice'
 import redditLogo from './assets/reddit.png'
-
-const clientId = import.meta.env.VITE_REDDIT_CLIENT_ID;
-const redirectUri = import.meta.env.VITE_REDDIT_REDIRECT_URI;
-const scopes = import.meta.env.VITE_REDDIT_SCOPES;
-const state = import.meta.env.VITE_REDDIT_STATE;
+import { clientId, redirectUri, scopes, state } from './config';
 
 const authUrl = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=token&state=${state}&redirect_uri=${redirectUri}&duration=temporary&scope=${scopes}`;
 
