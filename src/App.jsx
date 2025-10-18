@@ -75,7 +75,7 @@ function App() {
               <button className="to-reddit">Go to reddit</button>
             </a>
           </nav>
-          {/*<StoryCard posts={posts} />*/}
+          <StoryCard posts={posts} />
         </>
       )}
       

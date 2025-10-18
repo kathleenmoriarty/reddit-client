@@ -2,11 +2,16 @@ import React from "react";
 import "./StoryCard.css";
 import Story from "../story/Story";
 
-const StoryCard = ({mockData}) => {
+const StoryCard = ({posts}) => {
   return (
-    <div className="storycard">
-      <Story mockData={mockData} />
-    </div>
+    <>
+    {posts.map((postWrapper, index) => (
+        <div className="storycard" key={postWrapper.data.id || index}>
+            <Story post={postWrapper.data} />
+        </div>
+    ))}
+        
+    </>
   );
 };
 
