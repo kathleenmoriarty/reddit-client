@@ -10,15 +10,15 @@ Below are rough wireframes outlining the main UI components of the app:
 
 ### 1. Login Screen
 
-![Login Wireframe](./assets/wireframes/login.svg)
+![Login Wireframe](./src/assets/wireframes/login.svg)
 
 ### 2. Main Dashboard
 
-![Dashboard Wireframe](./assets/wireframes/dashboard.svg)
+![Dashboard Wireframe](./src/assets/wireframes/dashboard.svg)
 
 ### 3. Post Detail / Comments View (toggle-able)
 
-![Post Detail Wireframe](./assets/wireframes/comments.svg)
+![Post Detail Wireframe](./src/assets/wireframes/comments.svg)
 
 ---
 
