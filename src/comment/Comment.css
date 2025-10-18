@@ -1,0 +1,27 @@
+.comment {
+    padding: 20px;
+    margin-bottom: 14px;
+    background-color: aliceblue;
+    border-radius: 30px;
+}
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-header div {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 5px;
+}
+
+.comment-header img {
+    width: 2vw;
+    margin-right: 10px;
+}
+
+.comment-header div p {
+    font-weight: 600;
+}

@@ -6,20 +6,6 @@ import { setToken } from './features/auth/authSlice';
 import {fetchPosts} from './features/posts/postsSlice'
 import redditLogo from './assets/reddit.png'
 
-/*const mockData = {
-  title: "Mock Title that is really blah blah",
-  image: "../src/assets/reddit.png",
-  likes: 19.8,
-  author: "MC-Clap-your-hands",
-  time: "8 hrs ago",
-  comments: 918,
-  commentors: [
-    ["author1", "I did n't like it"],
-    ["author2", "I liked it alot"],
-    ["author3", "it was mid"]
-  ]
-};*/
-
 const clientId = import.meta.env.VITE_REDDIT_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_REDDIT_REDIRECT_URI;
 const scopes = import.meta.env.VITE_REDDIT_SCOPES;

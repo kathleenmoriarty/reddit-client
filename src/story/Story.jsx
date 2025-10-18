@@ -55,7 +55,7 @@ const Story = ({post}) => {
             <p>{post.ups}</p>
             <button><FontAwesomeIcon icon={faThumbsDown} /></button>
         </div>
-        <button className="comment" onClick={() => setShowComments(!showComments)}>
+        <button className="comment-btn" onClick={() => setShowComments(!showComments)}>
             <FontAwesomeIcon icon={faComment} />
             {post.num_comments}
         </button>

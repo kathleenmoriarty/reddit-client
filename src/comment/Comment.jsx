@@ -5,14 +5,15 @@ const Comment = ({ comment }) => {
   return (
     <div className="comment">
       <div className="comment-header">
-        <img
-          src={`https://www.redditstatic.com/avatars/avatar_default_02_0DD3BB.png`}
-          alt="profile-pic"
-        />
         <div>
+          <img
+            src={`https://www.redditstatic.com/avatars/avatar_default_02_0DD3BB.png`}
+            alt="profile-pic"
+          />
           <p>{comment.author}</p>
-          <p>Just now</p> 
         </div>
+        <p>Just now</p> 
+        
       </div>
 
       <div className="comment-body">

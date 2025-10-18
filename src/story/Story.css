@@ -47,7 +47,7 @@
     justify-content: center;
 }
 
-.likes-comments div, .comment, .share {
+.likes-comments div, .comment-btn, .share {
     background-color: rgb(236, 230, 230);
     padding: 10px;
     border-radius: 20px;
