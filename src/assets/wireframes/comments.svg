@@ -1,0 +1,17 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg" style="background:#f9f9f9; font-family:sans-serif">
+  <rect x="10" y="10" width="380" height="280" fill="#fff" stroke="#ccc" />
+  
+  <text x="200" y="40" font-size="20" font-weight="bold" text-anchor="middle" fill="#222">Comments</text>
+  
+  <rect x="20" y="60" width="350" height="60" fill="#f0f0f0" />
+  <text x="30" y="85" font-size="14" fill="#555">User1</text>
+  <text x="30" y="105" font-size="16" fill="#333">This is a sample comment text...</text>
+  
+  <rect x="20" y="130" width="350" height="60" fill="#f0f0f0" />
+  <text x="30" y="155" font-size="14" fill="#555">User2</text>
+  <text x="30" y="175" font-size="16" fill="#333">Another example of comment text.</text>
+  
+  <rect x="20" y="200" width="350" height="60" fill="#f0f0f0" />
+  <text x="30" y="225" font-size="14" fill="#555">User3</text>
+  <text x="30" y="245" font-size="16" fill="#333">More comments here...</text>
+</svg>

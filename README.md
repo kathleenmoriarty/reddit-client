@@ -9,8 +9,16 @@ A lightweight Reddit client app built with React and Redux, allowing users to br
 Below are rough wireframes outlining the main UI components of the app:
 
 ### 1. Login Screen
+
+![Login Wireframe](./assets/wireframes/login.svg)
+
 ### 2. Main Dashboard
+
+![Dashboard Wireframe](./assets/wireframes/dashboard.svg)
+
 ### 3. Post Detail / Comments View (toggle-able)
+
+![Post Detail Wireframe](./assets/wireframes/comments.svg)
 
 ---
 
