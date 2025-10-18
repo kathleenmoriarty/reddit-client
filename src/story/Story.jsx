@@ -66,7 +66,7 @@ const Story = ({post}) => {
       </div>
 
       {showComments && (
-        <CommentList postId={post.id} />
+        <CommentList postId={post.id} subreddit={post.subreddit}/>
       )}
 
     </div>

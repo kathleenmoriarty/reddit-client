@@ -1,22 +1,23 @@
 import React from "react";
 import "./Comment.css";
 
-
-const Comment = ({mockData}) => {
+const Comment = ({ comment }) => {
   return (
     <div className="comment">
-      <div>
-        <img src={mockData.image} alt="profile-pic" />
+      <div className="comment-header">
+        <img
+          src={`https://www.redditstatic.com/avatars/avatar_default_02_0DD3BB.png`}
+          alt="profile-pic"
+        />
         <div>
-            <p>AUTHOR NAME HERE</p>
-            <p>HOW LONG AGO</p>
+          <p>{comment.author}</p>
+          <p>Just now</p> 
         </div>
       </div>
 
-      <div>
-        COMMENT HERE
+      <div className="comment-body">
+        {comment.text}
       </div>
-      
     </div>
   );
 };
