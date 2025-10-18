@@ -92,7 +92,7 @@ function App() {
   return (
     <main>
       {!token ? (
-        <button onClick={loginWithReddit}>Login with Reddit</button>
+        <button onClick={loginWithReddit} className="login-btn">Login with Reddit</button>
       ) : (
         <>
           <nav>
