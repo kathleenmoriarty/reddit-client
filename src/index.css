@@ -67,8 +67,16 @@ nav .to-reddit:hover {
 }
 
 .subreddits h3 {
-  margin-left: 20px;
-  margin-top: 16px;
+  margin: 16px auto 16px 20px;
+}
+
+.subreddits ul {
+  margin-left: 30px;
+}
+
+.subreddits li {
+  list-style: circle;
+  padding-bottom: 5px;
 }
 
 

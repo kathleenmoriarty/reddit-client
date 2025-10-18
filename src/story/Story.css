@@ -32,6 +32,12 @@
 
 .content img {
     align-self: center;
+    width: 40vw;
+    margin-top: 10px;
+}
+
+.content p {
+    text-align: center;
 }
 
 .likes-comments {

@@ -21,15 +21,22 @@ const Story = ({post}) => {
         return `${days} days ago`;
     };
 
-    let imageUrl = null;
-
-    if (post.preview && post.preview.images && post.preview.images.length > 0) {
-    imageUrl = decodeUrl(post.preview.images[0].source.url);
-    } else if (post.url && (post.url.endsWith('.jpg') || post.url.endsWith('.png') || post.url.endsWith('.gif'))) {
-    imageUrl = post.url;
-    } else if (post.thumbnail && post.thumbnail.startsWith('http')) {
-    imageUrl = post.thumbnail;
+    const getImageUrl = (post) => {
+      if (post.preview && post.preview.images && post.preview.images.length > 0) {
+        try {
+          return decodeURIComponent(post.preview.images[0].source.url.replace(/&amp;/g, '&'));
+        } catch {
+          return post.preview.images[0].source.url.replace(/&amp;/g, '&');
+        }
+      } else if (post.url && (post.url.endsWith('.jpg') || post.url.endsWith('.png') || post.url.endsWith('.gif'))) {
+        return post.url;
+      } else if (post.thumbnail && post.thumbnail.startsWith('http') && !['self', 'default', 'nsfw'].includes(post.thumbnail)) {
+        return post.thumbnail;
+      }
+      return null; // no image available
     }
+
+    const imageUrl = getImageUrl(post);
 
   return (
     <div className="story">
