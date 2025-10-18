@@ -49,3 +49,26 @@ nav .to-reddit:hover {
   font-size: 20px;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  height: 100vh;
+}
+
+.subreddits {
+  margin: 24px 30px 25px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 16px;
+  height: auto;
+  align-self: start;
+  min-height: 100vh;
+}
+
+.subreddits h3 {
+  margin-left: 20px;
+  margin-top: 16px;
+}
+
+

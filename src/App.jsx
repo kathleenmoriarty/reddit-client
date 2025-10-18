@@ -75,7 +75,16 @@ function App() {
               <button className="to-reddit">Go to reddit</button>
             </a>
           </nav>
-          <StoryCard posts={posts} />
+          <div className="container">
+            <div>
+              <StoryCard posts={posts} />
+            </div>
+            
+            <div className="subreddits">
+              <h3>Subreddits</h3>
+            </div>
+          </div>
+          
         </>
       )}
       
